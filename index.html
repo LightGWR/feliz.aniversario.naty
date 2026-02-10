@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naty 🐿️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&display=swap');
+
+:root {
+  --laranja: #ff8c00;
+  --marrom: #6b3200;
+  --creme: #fff4e6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Baloo 2', cursive;
+}
+
+body {
+  background: linear-gradient(180deg, #ffb347, var(--laranja));
+  min-height: 100vh;
+  color: var(--marrom);
+}
+
+
+.mundos {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.mundos a {
+  text-decoration: none;
+  background: white;
+  color: var(--marrom);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  box-shadow: 3px 3px var(--marrom);
+  cursor: pointer;
+}
+
+
+header {
+  text-align: center;
+  padding: 40px 15px;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  color: white;
+  text-shadow: 4px 4px var(--marrom);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+
+.box {
+  background: var(--creme);
+  margin: 25px auto;
+  padding: 22px;
+  max-width: 900px;
+  border-radius: 20px;
+  box-shadow: 6px 6px var(--marrom);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+
+.galeria {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 40px;
+  margin: 80px 20px;
+  flex-wrap: wrap;
+}
+
+
+.foto-container {
+  position: relative;
+  animation: flutuar 4s ease-in-out infinite;
+  text-align: center;
+}
+
+@keyframes flutuar {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.foto {
+  max-height: 420px;
+  border-radius: 25px;
+  border: 6px solid white;
+  box-shadow: 6px 6px var(--marrom);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+
+.personagem {
+  position: absolute;
+  width: 80px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.personagem:hover {
+  transform: scale(1.1);
+}
+
+.tl { top: -40px; left: -40px; }
+.tr { top: -40px; right: -40px; }
+.bl { bottom: -45px; left: -45px; }
+.br { bottom: -45px; right: -45px; }
+
+
+.mensagem-foto {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: white;
+  background: rgba(255, 140, 0, 0.95);
+  padding: 10px 16px;
+  border-radius: 15px;
+  display: none;
+  animation: aparecer 0.4s ease;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.player {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 1000;
+}
+
+.player button {
+  background: #1db954;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+}
+
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: white;
+}
+
+
+@media (max-width: 768px) {
+  .galeria { flex-direction: column; }
+  .foto { max-width: 330px; width: 90vw; }
+  .personagem { width: 60px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="mundos">
+  <a id="btnLaranja">🍊 Mundo Laranja</a>
+  <a id="btnPraiano">🌴 Mundo Praiano</a>
+</div>
+
+<header>
+  <h1>🎉 Feliz Aniversário, Naty 🧡</h1>
+</header>
+
+<div class="box">
+Antes de tudo, clica na música para você ouvir enquanto lê tudo.
+
+Fiz esse site pensando em você e no seu desenho favorito, Tico e Teco.
+Sempre que precisar se animar ou se sentir triste, pode voltar aqui e lembrar
+que sempre terá alguém que se importa com você.
+
+Deixei várias mensagens escondidas; você pode voltar aqui e lembrar…
+mas, como eu sei que você é péssima para desvendar e provavelmente não ia achar, KKKK,
+é só clicar nos dois Ticos e Tecos, e cada foto também tem uma mensagem especial.
+
+Que seu aniversário seja incrível hoje, e parabéns pelo seu dia.
+Você é muito especial.
+</div>
+
+<div class="galeria">
+
+  <div class="foto-container">
+    <img src="imagens/foto1.jpeg" class="foto" data-msg="🐿️ Tico está feliz com essa moça linda do lado 🧡">
+    <img src="imagens/teco.png" class="personagem tl" data-personagem="teco">
+    <img src="imagens/tico.png" class="personagem bl" data-personagem="tico">
+    <div class="mensagem-foto"></div>
+  </div>
+
+  <div class="foto-container">
+    <img src="imagens/foto2.jpeg" class="foto" data-msg="🔥 Tico e Teco te acharam meio apimentada por aqui.">
+    <img src="imagens/tico.png" class="personagem tl" data-personagem="tico">
+    <img src="imagens/teco.png" class="personagem tr" data-personagem="teco">
+    <div class="mensagem-foto"></div>
+  </div>
+
+  <div class="foto-container">
+    <img src="imagens/foto3.jpeg" class="foto" data-msg="🐿️ Tico não quer beijo, não! Sai pra lá!">
+    <img src="imagens/tico.png" class="personagem bl" data-personagem="tico">
+    <img src="imagens/teco.png" class="personagem br" data-personagem="teco">
+    <div class="mensagem-foto"></div>
+  </div>
+
+</div>
+
+<div class="box">
+  Mesmo em pouco tempo, você virou alguém especial na minha vida.
+  Essa é a primeira página da jornada do nosso ano.
+  Parabéns pelo seu dia, pimentãozinho 🌶️  
+  Sempre que precisar, estarei aqui.
+</div>
+
+<footer>
+  Pro meu Pimentão Favorito 🐿️ • Weslley
+</footer>
+
+<div class="player">
+  <button id="play">▶️</button>
+  abaixa o som antes de clicar
+</div>
+
+<audio id="audio" src="hey.soul.sister.mp3"></audio>
+
+<script>
+const audio = document.getElementById('audio');
+document.getElementById('play').onclick = () => {
+  audio.paused ? audio.play() : audio.pause();
+};
+
+document.querySelectorAll('.foto-container').forEach(container => {
+  const mensagem = container.querySelector('.mensagem-foto');
+
+  container.querySelectorAll('.foto, .personagem').forEach(el => {
+    el.addEventListener('click', () => {
+
+      document.querySelectorAll('.mensagem-foto').forEach(m => {
+        if (m !== mensagem) m.style.display = 'none';
+      });
+
+      if (el.classList.contains('foto')) {
+        mensagem.innerText = el.dataset.msg;
+      }
+
+      if (el.classList.contains('personagem')) {
+        mensagem.innerText =
+          el.dataset.personagem === 'tico'
+          ? '🐿️ Tico disse: Ei! Não toca nos meus pelos fofos, você não é digna!😆'
+          : '🐿️ Teco disse: Eu sei que você me ama pimentãozinho 😌';
+      }
+
+      mensagem.style.display = 'block';
+
+      el.style.transform = 'scale(1.2)';
+      setTimeout(() => el.style.transform = 'scale(1)', 300);
+    });
+  });
+});
+
+document.getElementById('btnLaranja').onclick = () => {
+  alert('🚧 Mundo Laranja em construção');
+};
+
+document.getElementById('btnPraiano').onclick = () => {
+  alert('🚧 Mundo Praiano em construção');
+};
+</script>
+
+</body>
+</html>
